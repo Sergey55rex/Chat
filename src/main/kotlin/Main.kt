@@ -11,11 +11,15 @@ fun main(){
     println(servise.getChats(user1))
     println(servise.getChats(user2))
     val chat1 =servise.getChats(user1)[0]
-
+println()
+    servise.sendMessage(1,user1,user2,"Пока")
     println(servise.getMessage(chatId = chat1.id, listMessageId = 1, count = 3))
+    println()
     println(servise.getChats(user1))
     println(servise.getUnreadChatsCount(2))
     println(servise.getChats(1))
-    println(servise.removeMessage(1,1))
-    println(servise.getMessage(1,1,1))
+    println(servise.removeMessage(1,2))
+    println(servise.getMessage(1,1,3))
+
+    println(servise.removeChat(1))
 }

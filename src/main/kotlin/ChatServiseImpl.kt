@@ -1,7 +1,7 @@
 import java.text.SimpleDateFormat
 import java.util.*
-
 class ChatServiseImpl : ChatServise {
+
     private val users = mutableListOf<User>()
     private val chats = mutableListOf<Chat>()
 
@@ -19,7 +19,7 @@ class ChatServiseImpl : ChatServise {
 
     override fun getUnreadChatsCount(clientId: Long): Int  = chats.asSequence()
             .filter {chat -> clientId == chat.firstUserId || clientId == chat.secondUserId}
-            .filter { chat -> chat.messages.any { m -> m.isUnread } }
+            .filter { chat -> chat.messages.any { message -> message.isUnread } }
             .count()
 
     override fun removeChat(chatId: Long): Boolean {
